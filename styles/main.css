@@ -1,0 +1,191 @@
+/* ─── Global resets and launcher styles ────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:        #0a0a0a;
+  --surface:   #111;
+  --border:    #2a2a2a;
+  --text:      #ddd;
+  --muted:     #666;
+  --accent-r:  #ff8800;   /* Roland orange */
+  --accent-b:  #4488ff;   /* Roland blue */
+  --accent-y:  #cccc00;   /* Korg yellow */
+  --accent-c:  #cc6600;   /* Moog brown */
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Arial, 'Courier New', monospace;
+  line-height: 1.4;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ─── Launcher page ─────────────────────────────────────────────────── */
+
+.launcher {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.launcher-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.launcher-title {
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.launcher-headline {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.launcher-sub {
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* Grid of synth cards */
+.synth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.synth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.synth-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+}
+
+.synth-card-header {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Per-instrument colour accents */
+.synth-card[data-synth="TR808"] { border-color: #ff8800; }
+.synth-card[data-synth="TR808"] .synth-card-header { background: linear-gradient(135deg, #1a0a00, #2a1400); }
+.synth-card[data-synth="TR808"]:hover { border-color: #ffaa33; box-shadow: 0 12px 32px rgba(255,136,0,0.2); }
+
+.synth-card[data-synth="TR909"] { border-color: #0077cc; }
+.synth-card[data-synth="TR909"] .synth-card-header { background: linear-gradient(135deg, #001122, #00224a); }
+.synth-card[data-synth="TR909"]:hover { border-color: #3399ff; box-shadow: 0 12px 32px rgba(0,120,204,0.2); }
+
+.synth-card[data-synth="Minimoog"] { border-color: #cc6600; }
+.synth-card[data-synth="Minimoog"] .synth-card-header { background: linear-gradient(135deg, #1a0a00, #3a2000); }
+.synth-card[data-synth="Minimoog"]:hover { border-color: #ff8833; box-shadow: 0 12px 32px rgba(204,102,0,0.2); }
+
+.synth-card[data-synth="Juno106"] { border-color: #4488ff; }
+.synth-card[data-synth="Juno106"] .synth-card-header { background: linear-gradient(135deg, #000d1a, #001133); }
+.synth-card[data-synth="Juno106"]:hover { border-color: #88aaff; box-shadow: 0 12px 32px rgba(68,136,255,0.2); }
+
+.synth-card[data-synth="MS20"] { border-color: #cccc00; }
+.synth-card[data-synth="MS20"] .synth-card-header { background: linear-gradient(135deg, #0d0d00, #1a1a00); }
+.synth-card[data-synth="MS20"]:hover { border-color: #ffff33; box-shadow: 0 12px 32px rgba(204,204,0,0.2); }
+
+.synth-card[data-synth="MS10"] { border-color: #aaaa00; }
+.synth-card[data-synth="MS10"] .synth-card-header { background: linear-gradient(135deg, #0d0d00, #141400); }
+.synth-card[data-synth="MS10"]:hover { border-color: #dddd00; box-shadow: 0 12px 32px rgba(170,170,0,0.2); }
+
+.synth-card-brand {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: block;
+}
+
+.synth-card-model {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  display: block;
+  line-height: 1;
+}
+
+.synth-card[data-synth="TR808"]   .synth-card-model { color: #ff8800; }
+.synth-card[data-synth="TR909"]   .synth-card-model { color: #3399ff; }
+.synth-card[data-synth="Minimoog"] .synth-card-model { color: #ff8833; font-style: italic; }
+.synth-card[data-synth="Juno106"] .synth-card-model { color: #4488ff; }
+.synth-card[data-synth="MS20"]    .synth-card-model { color: #cccc00; }
+.synth-card[data-synth="MS10"]    .synth-card-model { color: #aaaa00; }
+
+.synth-card-body {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.synth-card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.synth-card-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.synth-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.synth-tag {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.synth-card-open {
+  margin-top: 14px;
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}

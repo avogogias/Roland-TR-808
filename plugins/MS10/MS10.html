@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korg MS-10 Monophonic Synthesizer</title>
+  <link rel="stylesheet" href="MS10.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0a0a;
+      display: flex; justify-content: center; align-items: flex-start;
+      min-height: 100vh; padding: 32px 16px;
+    }
+    .back-link { position: fixed; top: 12px; left: 16px; color: #555;
+      text-decoration: none; font-size: 12px; letter-spacing: 1px; }
+    .back-link:hover { color: #cccc00; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../index.html">← BACK</a>
+  <div id="app"></div>
+  <script type="module">
+    import MS10 from './MS10.js';
+    const app = document.getElementById('app');
+    const synth = new MS10(app);
+    synth.buildUI();
+  </script>
+</body>
+</html>
