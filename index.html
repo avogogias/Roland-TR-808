@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analogue Synthesizer Simulations</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<main class="launcher">
+
+  <header class="launcher-header">
+    <p class="launcher-title">Legacy Analogue</p>
+    <h1 class="launcher-headline">Synthesizer Simulations</h1>
+    <p class="launcher-sub">
+      Six classic machines — DSP-accurate, browser-based, no samples
+    </p>
+  </header>
+
+  <div class="synth-grid">
+
+    <!-- Roland TR-808 -->
+    <a class="synth-card" data-synth="TR808" href="plugins/TR808/TR808.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Roland</span>
+          <span class="synth-card-model">TR-808</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Rhythm Composer (1980)</div>
+        <p class="synth-card-desc">
+          The drum machine that defined hip-hop, house, and techno.
+          Fully synthesised bass drum, snare, hi-hats, toms, cowbell,
+          cymbal, clap and clave — each with authentic parameter controls.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">16-Step Sequencer</span>
+          <span class="synth-tag">14 Drum Voices</span>
+          <span class="synth-tag">Swing</span>
+          <span class="synth-tag">Accent</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
+    <!-- Roland TR-909 -->
+    <a class="synth-card" data-synth="TR909" href="plugins/TR909/TR909.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Roland</span>
+          <span class="synth-card-model">TR-909</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Rhythm Composer (1983)</div>
+        <p class="synth-card-desc">
+          Punchier, more electronic sibling of the 808. Defined the
+          sound of techno and trance. Features the iconic punchy bass drum,
+          bright snare and resonant hi-hats.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">16-Step Sequencer</span>
+          <span class="synth-tag">9 Drum Voices</span>
+          <span class="synth-tag">Click Transient</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
+    <!-- Moog Minimoog -->
+    <a class="synth-card" data-synth="Minimoog" href="plugins/Minimoog/Minimoog.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Moog</span>
+          <span class="synth-card-model">minimoog</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Model D Monophonic Synthesizer (1970)</div>
+        <p class="synth-card-desc">
+          The definitive analogue bass and lead synthesizer. Three VCOs,
+          the legendary 24 dB/oct Moog ladder filter, dual contour
+          generators, glide, and LFO.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">3 VCOs</span>
+          <span class="synth-tag">Moog Ladder Filter</span>
+          <span class="synth-tag">Glide</span>
+          <span class="synth-tag">MIDI + QWERTY</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
+    <!-- Roland Juno-106 -->
+    <a class="synth-card" data-synth="Juno106" href="plugins/Juno106/Juno106.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Roland</span>
+          <span class="synth-card-model">JUNO-106</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Programmable Polyphonic Synthesizer (1984)</div>
+        <p class="synth-card-desc">
+          Warm, lush pads and strings. Six-voice polyphony with one DCO
+          per voice, a smooth 24 dB/oct filter, and the iconic BBD
+          chorus — Chorus I and Chorus II modes.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">6-Voice Poly</span>
+          <span class="synth-tag">DCO + Sub</span>
+          <span class="synth-tag">BBD Chorus</span>
+          <span class="synth-tag">MIDI + QWERTY</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
+    <!-- Korg MS-20 -->
+    <a class="synth-card" data-synth="MS20" href="plugins/MS20/MS20.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Korg</span>
+          <span class="synth-card-model">MS-20</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Semi-Modular Synthesizer (1978)</div>
+        <p class="synth-card-desc">
+          Aggressively characterful semi-modular monophonic synth. Dual
+          VCOs, separate HPF and LPF both capable of self-oscillation,
+          two envelope generators, and a patch bay.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">Dual VCO</span>
+          <span class="synth-tag">HPF + LPF</span>
+          <span class="synth-tag">Self-Oscillating</span>
+          <span class="synth-tag">Patch Bay</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
+    <!-- Korg MS-10 -->
+    <a class="synth-card" data-synth="MS10" href="plugins/MS10/MS10.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Korg</span>
+          <span class="synth-card-model">MS-10</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Monophonic Synthesizer (1978)</div>
+        <p class="synth-card-desc">
+          The compact single-filter sibling of the MS-20 with one VCO,
+          the same Korg transistor LPF, full ADSR envelope, and LFO.
+          Simple, direct and very playable.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">Single VCO</span>
+          <span class="synth-tag">Korg LPF</span>
+          <span class="synth-tag">ADSR</span>
+          <span class="synth-tag">MIDI + QWERTY</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
+  </div><!-- .synth-grid -->
+
+</main>
+
+</body>
+</html>

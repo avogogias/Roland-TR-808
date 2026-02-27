@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moog Minimoog Model D</title>
+  <link rel="stylesheet" href="Minimoog.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #3a2010;
+      display: flex; justify-content: center; align-items: flex-start;
+      min-height: 100vh; padding: 32px 16px; position: relative;
+    }
+    .back-link { position: fixed; top: 12px; left: 16px; color: #aa8866;
+      text-decoration: none; font-size: 12px; }
+    .back-link:hover { color: #ffcc88; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../index.html">← BACK</a>
+  <div id="app" style="position:relative;"></div>
+  <script type="module">
+    import Minimoog from './Minimoog.js';
+    const app = document.getElementById('app');
+    const synth = new Minimoog(app);
+    synth.buildUI();
+  </script>
+</body>
+</html>

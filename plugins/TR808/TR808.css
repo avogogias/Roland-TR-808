@@ -1,0 +1,222 @@
+/* ─── Roland TR-808 Rhythm Composer ────────────────────────────────── */
+
+.tr808 {
+  background: #1c1c1c;
+  border-radius: 10px;
+  border: 2px solid #333;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+  font-family: 'Courier New', monospace;
+  color: #e8e0d0;
+  padding: 16px;
+  min-width: 900px;
+  user-select: none;
+}
+
+/* Header */
+.tr808-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 0 12px;
+  border-bottom: 2px solid #333;
+  margin-bottom: 12px;
+}
+
+.tr808-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.tr808-brand {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.tr808-model {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #ff8800;
+  text-shadow: 0 0 12px rgba(255,136,0,0.4);
+}
+
+.tr808-subtitle {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+/* Transport */
+.tr808-transport {
+  margin-bottom: 12px;
+}
+
+.tr808-transport-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 12px;
+  background: #141414;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+}
+
+.tr808-ctrl-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #888;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tr808-tempo-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.tr808-tempo-input {
+  background: #0a0a0a;
+  border: 1px solid #444;
+  color: #ff8800;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  width: 60px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.tr808-tempo-input:focus {
+  outline: none;
+  border-color: #ff8800;
+}
+
+.tr808-swing-wrap { display: flex; align-items: center; }
+
+.tr808-btn {
+  padding: 8px 18px;
+  border: 1.5px solid #555;
+  border-radius: 4px;
+  background: #222;
+  color: #ccc;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.tr808-btn:hover { background: #2a2a2a; border-color: #888; }
+.tr808-btn.active { background: #ff8800; color: #000; border-color: #ff8800; }
+.tr808-btn-start.active { background: #00aa44; border-color: #00aa44; color: #fff; }
+
+/* Instrument rows */
+.tr808-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tr808-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.tr808-row.row-even { background: rgba(255,255,255,0.02); }
+.tr808-row.row-odd  { background: transparent; }
+
+.tr808-inst-label {
+  width: 90px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #ff8800;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Voice control knobs */
+.tr808-voice-controls {
+  display: flex;
+  gap: 4px;
+  width: 168px;
+  flex-shrink: 0;
+}
+
+.tr808-knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Knob component label */
+.knob-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.knob-label {
+  font-size: 7px;
+  letter-spacing: 1px;
+  color: #888;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Step pads */
+.tr808-pads {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.pad-btn {
+  width: 32px;
+  height: 24px;
+  border: 1.5px solid #3a3a3a;
+  border-radius: 3px;
+  background: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.07s, border-color 0.07s;
+  padding: 0;
+  outline: none;
+}
+
+.pad-btn:hover { border-color: #666; background: #222; }
+
+.pad-btn.enabled {
+  background: #994400;
+  border-color: #ff8800;
+  box-shadow: 0 0 6px rgba(255,136,0,0.4);
+}
+
+.pad-btn.accent {
+  background: #cc5500;
+  border-color: #ffaa00;
+  box-shadow: 0 0 8px rgba(255,170,0,0.6);
+}
+
+.pad-btn.playing {
+  outline: 2px solid rgba(255,255,255,0.5);
+  outline-offset: -2px;
+}
+
+.pad-btn.enabled.playing {
+  background: #ff8800;
+  border-color: #ffcc66;
+  box-shadow: 0 0 10px rgba(255,136,0,0.8);
+}
+
+/* Slider */
+.slider-wrap { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.slider-label {
+  font-size: 7px; letter-spacing: 1px; color: #888;
+  text-transform: uppercase; text-align: center;
+}

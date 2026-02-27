@@ -1,0 +1,120 @@
+/* ─── Roland Juno-106 Polyphonic Synthesizer ───────────────────────── */
+
+.juno106 {
+  background: linear-gradient(170deg, #2a2a30 0%, #1e1e24 100%);
+  border-radius: 10px;
+  border: 3px solid #3a3a44;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #ddddee;
+  padding: 20px;
+  min-width: 900px;
+  user-select: none;
+}
+
+.juno-header {
+  display: flex; align-items: center;
+  padding: 8px 0 16px;
+  border-bottom: 2px solid #3a3a50;
+  margin-bottom: 16px;
+}
+
+.juno-logo { display: flex; flex-direction: column; line-height: 1.1; }
+.juno-brand { font-size: 11px; letter-spacing: 6px; color: #888; text-transform: uppercase; }
+.juno-model { font-size: 32px; font-weight: 900; color: #4488ff; letter-spacing: 2px; }
+.juno-subtitle { font-size: 9px; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+
+.juno-panel {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;
+}
+
+.juno-section {
+  background: #16161c;
+  border: 1px solid #2a2a40;
+  border-radius: 6px;
+  padding: 10px;
+  flex: 1; min-width: 80px;
+}
+
+.juno-section-title {
+  font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+  color: #4488ff; font-weight: 700; margin-bottom: 8px;
+  border-bottom: 1px solid #2a2a40; padding-bottom: 4px;
+}
+
+.juno-section-body { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; }
+
+.juno-ctrl-label {
+  font-size: 7px; letter-spacing: 1px; color: #666;
+  text-transform: uppercase; display: block; margin-bottom: 2px;
+}
+
+/* Range selector */
+.juno-range-wrap { display: flex; flex-direction: column; gap: 2px; }
+.juno-range-btn {
+  padding: 2px 6px; border: 1px solid #444; background: #222;
+  color: #999; font-size: 9px; cursor: pointer; border-radius: 3px;
+  font-family: inherit; transition: all 0.1s;
+}
+.juno-range-btn:hover  { border-color: #4488ff; color: #4488ff; }
+.juno-range-btn.active { background: #002266; border-color: #4488ff; color: #88aaff; }
+
+.juno-toggle-btn, .juno-mode-btn, .juno-hpf-btn, .juno-sub-btn, .juno-chorus-btn {
+  padding: 4px 8px; border: 1px solid #444; background: #222;
+  color: #999; font-size: 9px; cursor: pointer; border-radius: 3px;
+  font-family: inherit; transition: all 0.1s;
+}
+.juno-toggle-btn:hover, .juno-mode-btn:hover, .juno-hpf-btn:hover,
+.juno-sub-btn:hover, .juno-chorus-btn:hover { border-color: #4488ff; color: #4488ff; }
+.juno-toggle-btn.active, .juno-mode-btn.active, .juno-hpf-btn.active,
+.juno-sub-btn.active, .juno-chorus-btn.active {
+  background: #002266; border-color: #4488ff; color: #88aaff;
+}
+
+.juno-hpf-wrap, .juno-sub-wrap, .juno-mode-wrap {
+  display: flex; flex-direction: column; gap: 3px;
+}
+
+/* Sliders */
+.juno-slider-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.juno-slider-label {
+  font-size: 7px; letter-spacing: 1px; color: #666;
+  text-transform: uppercase; text-align: center;
+}
+
+/* Override slider component colours */
+.juno106 .slider-fill { background: #4488ff !important; }
+.juno106 .slider-thumb { background: #aabbff !important; }
+
+/* Envelope sections */
+.juno-env-wrap { display: flex; flex-direction: column; gap: 2px; }
+.juno-env-body { display: flex; gap: 4px; }
+
+/* Keyboard */
+.juno-keyboard { margin-top: 12px; border-top: 1px solid #2a2a40; padding-top: 12px; }
+.juno-kb-inner { position: relative; height: 90px; display: flex; }
+
+.juno-key { cursor: pointer; border-radius: 0 0 4px 4px; flex-shrink: 0; }
+.juno-key-white {
+  width: 28px; height: 90px;
+  background: linear-gradient(180deg, #e8e8f0 0%, #fff 100%);
+  border: 1px solid #888; margin-right: 1px; z-index: 1;
+}
+.juno-key-white:hover  { background: #ccddff; }
+.juno-key-white:active { background: #88aaff; }
+.juno-key-black {
+  width: 18px; height: 60px;
+  background: linear-gradient(180deg, #111 0%, #222 100%);
+  position: absolute; z-index: 2;
+  border: 1px solid #000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+}
+.juno-key-black:hover  { background: #001133; }
+.juno-key-black:active { background: #002266; }
+
+.juno-midi-status {
+  font-size: 9px; color: #555; letter-spacing: 1px;
+  margin-top: 8px; text-align: center; text-transform: uppercase;
+}

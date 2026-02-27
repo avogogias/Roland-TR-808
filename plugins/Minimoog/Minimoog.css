@@ -1,0 +1,151 @@
+/* ─── Moog Minimoog Model D ─────────────────────────────────────────── */
+
+.minimoog {
+  background: linear-gradient(170deg, #f5ede0 0%, #ede0c8 100%);
+  border-radius: 12px;
+  border: 3px solid #8a7060;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6),
+              inset 0 2px 0 rgba(255,255,255,0.6);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #1a0a00;
+  padding: 20px;
+  min-width: 860px;
+  user-select: none;
+}
+
+/* Walnut side cheeks simulation */
+.minimoog::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(to right,
+    rgba(80,40,10,0.25) 0%, transparent 6%,
+    transparent 94%, rgba(80,40,10,0.25) 100%);
+  pointer-events: none;
+}
+
+.mm-header {
+  display: flex; align-items: center;
+  padding: 8px 0 16px;
+  border-bottom: 2px solid #c0a880;
+  margin-bottom: 16px;
+}
+
+.mm-logo { display: flex; flex-direction: column; line-height: 1.1; }
+.mm-brand { font-size: 11px; letter-spacing: 6px; color: #666; text-transform: uppercase; }
+.mm-model { font-size: 32px; font-weight: 700; color: #1a0a00; font-style: italic; letter-spacing: -1px; }
+.mm-subtitle { font-size: 10px; letter-spacing: 2px; color: #885522; text-transform: uppercase; }
+
+/* Panel sections */
+.mm-panel {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+
+.mm-section {
+  background: rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 12px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.mm-section-title {
+  font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
+  color: #885522; font-weight: 700; margin-bottom: 10px;
+  border-bottom: 1px solid rgba(136,85,34,0.3);
+  padding-bottom: 4px;
+}
+
+.mm-sub-label {
+  font-size: 7px; letter-spacing: 2px; color: #885522;
+  text-transform: uppercase; align-self: flex-end; padding-bottom: 4px;
+  white-space: nowrap; margin-left: 8px;
+}
+
+.mm-section-body { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; }
+
+/* Oscillator bank */
+.mm-osc-panel {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 8px; background: rgba(0,0,0,0.04); border-radius: 6px;
+}
+
+.mm-osc-title {
+  font-size: 9px; letter-spacing: 2px; font-weight: 700;
+  color: #553311; text-transform: uppercase;
+}
+
+.mm-wave-select { display: flex; flex-direction: column; gap: 2px; }
+.mm-ctrl-label { font-size: 7px; letter-spacing: 1px; color: #888; text-transform: uppercase; }
+
+.mm-select {
+  background: #2a1a0a; color: #ffcc88;
+  border: 1px solid #665533; border-radius: 3px;
+  font-size: 11px; padding: 2px 4px; cursor: pointer;
+}
+.mm-select:focus { outline: none; border-color: #cc8844; }
+
+.mm-knob-row { display: flex; gap: 4px; }
+.mm-knob { display: flex; flex-direction: column; align-items: center; }
+
+/* Knob label override for Minimoog */
+.minimoog .knob-label { color: #885522; font-size: 7px; }
+.minimoog .knob-wrap  { gap: 2px; }
+
+/* Keyboard */
+.mm-keyboard {
+  margin-top: 16px;
+  border-top: 2px solid #c0a880;
+  padding-top: 12px;
+}
+
+.mm-kb-inner {
+  position: relative;
+  height: 100px;
+  display: flex;
+}
+
+.mm-key {
+  cursor: pointer;
+  border-radius: 0 0 4px 4px;
+  transition: background 0.05s;
+  flex-shrink: 0;
+}
+
+.mm-key-white {
+  width: 34px;
+  height: 100px;
+  background: linear-gradient(180deg, #f0ede8 0%, #fff 100%);
+  border: 1px solid #aaa;
+  border-top: 2px solid #ccc;
+  z-index: 1;
+  margin-right: 1px;
+}
+.mm-key-white:hover  { background: #ffe8c0; }
+.mm-key-white:active { background: #ffcc80; }
+
+.mm-key-black {
+  width: 22px;
+  height: 64px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #333 100%);
+  position: absolute;
+  z-index: 2;
+  border: 1px solid #000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+.mm-key-black:hover  { background: #443322; }
+.mm-key-black:active { background: #665533; }
+
+/* Black key positions (2 octaves from C3) */
+/* C#3=1, D#3=3, F#3=6, G#3=8, A#3=10 | C#4=13, D#4=15, F#4=18, G#4=20, A#4=22 */
+.mm-key-black:nth-child(1) { left: calc(1*35px - 12px); }
+.mm-key-black:nth-child(2) { left: calc(2*35px + 35px - 12px); } /* D# */
+/* hack: positions calculated by note index relative to white keys */
+
+.mm-midi-status {
+  font-size: 9px; color: #885522; letter-spacing: 1px;
+  margin-top: 8px; text-align: center; text-transform: uppercase;
+}
