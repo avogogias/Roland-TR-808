@@ -1,0 +1,2 @@
+-keep class androidx.webkit.** { *; }
+-keep class com.analogsynth.tr808.** { *; }

@@ -16,3 +16,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "RolandSynths"
 include ':app'
+include ':app-tr808'
+include ':app-tr909'
+include ':app-minimoog'
+include ':app-juno106'
+include ':app-ms20'
+include ':app-ms10'

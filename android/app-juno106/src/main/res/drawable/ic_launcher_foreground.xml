@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Roland Juno-106 icon: blue accents with chorus/keyboard motif -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Panel body -->
+    <rect android:x="14" android:y="26" android:width="80" android:height="56"
+        android:rx="2" android:fillColor="#2C2C2C" />
+
+    <!-- Blue top stripe -->
+    <rect android:x="14" android:y="26" android:width="80" android:height="10"
+        android:fillColor="#4A90D9" />
+
+    <!-- Juno-106 label -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M20,29 L22,29 L22,34 L20,34 Z
+          M24,29 L26,29 L27,31 L28,29 L30,29 L30,34 L28,34 L28,31 L27,33 L26,33 L26,31 L26,34 L24,34 Z" />
+
+    <!-- Chorus I/II buttons -->
+    <rect android:x="70" android:y="38" android:width="10" android:height="6"
+        android:rx="1" android:fillColor="#4A90D9" />
+    <rect android:x="70" android:y="47" android:width="10" android:height="6"
+        android:rx="1" android:fillColor="#666666" />
+
+    <!-- DCO / Filter knobs -->
+    <circle android:cx="28" android:cy="52" android:r="5" android:fillColor="#1A1A1A" />
+    <circle android:cx="28" android:cy="52" android:r="2" android:fillColor="#4A90D9" />
+
+    <circle android:cx="44" android:cy="52" android:r="5" android:fillColor="#1A1A1A" />
+    <circle android:cx="44" android:cy="52" android:r="2" android:fillColor="#4A90D9" />
+
+    <circle android:cx="60" android:cy="52" android:r="5" android:fillColor="#1A1A1A" />
+    <circle android:cx="60" android:cy="52" android:r="2" android:fillColor="#4A90D9" />
+
+    <!-- Keyboard -->
+    <rect android:x="14" android:y="70" android:width="80" android:height="12"
+        android:fillColor="#F5F5F5" />
+    <rect android:x="20" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="26" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="35" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="41" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="47" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="56" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="62" android:y="70" android:width="2" android:height="7"
+        android:fillColor="#1A1A1A" />
+</vector>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Roland TR-909 icon: orange accent with "909" label -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Orange accent stripe -->
+    <path
+        android:fillColor="#FF6B35"
+        android:pathData="M14,46 L94,46 L94,62 L14,62 Z" />
+
+    <!-- "909" label -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="
+          M22,38 Q22,32 28,32 Q34,32 34,38 L34,42 Q34,48 28,48 Q22,48 22,42 Z
+          M25,38 L25,42 Q25,45 28,45 Q31,45 31,42 L31,38 Q31,35 28,35 Q25,35 25,38 Z
+
+          M37,34 Q37,32 40,32 L46,32 Q49,32 49,35 L49,38 Q49,41 46,42 L49,42 L49,48 L37,48 L37,45 L46,45 L46,42 L40,42 Q37,42 37,39 Z
+          M40,35 L40,39 L46,39 L46,35 Z
+
+          M52,34 Q52,32 55,32 L61,32 Q64,32 64,35 L64,38 Q64,41 61,42 L64,42 L64,48 L52,48 L52,45 L61,45 L61,42 L55,42 Q52,42 52,39 Z
+          M55,35 L55,39 L61,39 L61,35 Z" />
+
+    <!-- "TR" small label -->
+    <path
+        android:fillColor="#444444"
+        android:pathData="
+          M33,26 L33,24 L42,24 L42,26 L39,26 L39,30 L36,30 L36,26 Z
+          M44,24 L49,24 Q52,24 52,27 Q52,29 50,30 L52,30 L52,32 L49,32 L47,30 L47,32 L44,32 Z
+          M47,26 L47,28 L49,28 Q50,28 50,27 Q50,26 49,26 Z" />
+
+    <!-- Step buttons -->
+    <rect android:x="20" android:y="66" android:width="8" android:height="8"
+        android:rx="1" android:fillColor="#FF6B35" />
+    <rect android:x="31" android:y="66" android:width="8" android:height="8"
+        android:rx="1" android:fillColor="#FF6B35" />
+    <rect android:x="42" android:y="66" android:width="8" android:height="8"
+        android:rx="1" android:fillColor="#FF6B35" />
+    <rect android:x="53" android:y="66" android:width="8" android:height="8"
+        android:rx="1" android:fillColor="#888888" />
+    <rect android:x="64" android:y="66" android:width="8" android:height="8"
+        android:rx="1" android:fillColor="#888888" />
+    <rect android:x="75" android:y="66" android:width="8" android:height="8"
+        android:rx="1" android:fillColor="#888888" />
+</vector>

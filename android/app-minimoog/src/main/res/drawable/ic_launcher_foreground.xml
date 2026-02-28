@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Moog Minimoog icon: warm tones with VCO label -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Cream panel body -->
+    <rect android:x="14" android:y="28" android:width="80" android:height="52"
+        android:rx="3" android:fillColor="#F0E8D0" />
+
+    <!-- Black title stripe -->
+    <rect android:x="14" android:y="28" android:width="80" android:height="14"
+        android:rx="3" android:fillColor="#1A1A1A" />
+
+    <!-- "MINIMOOG" text approximation -->
+    <path
+        android:fillColor="#C8955A"
+        android:pathData="M20,33 L22,33 L22,39 L20,39 Z
+          M24,33 L26,33 L27,36 L28,33 L30,33 L30,39 L28,39 L28,36 L27,38 L26,38 L26,36 L26,39 L24,39 Z
+          M32,33 L35,33 Q37,33 37,36 Q37,39 35,39 L32,39 Z
+          M34,35 L34,37 L35,37 Q35,35 35,35 Z" />
+
+    <!-- 3 VCO knobs -->
+    <circle android:cx="30" android:cy="56" android:r="6" android:fillColor="#2A2A2A" />
+    <circle android:cx="30" android:cy="56" android:r="2" android:fillColor="#C8955A" />
+
+    <circle android:cx="54" android:cy="56" android:r="6" android:fillColor="#2A2A2A" />
+    <circle android:cx="54" android:cy="56" android:r="2" android:fillColor="#C8955A" />
+
+    <circle android:cx="78" android:cy="56" android:r="6" android:fillColor="#2A2A2A" />
+    <circle android:cx="78" android:cy="56" android:r="2" android:fillColor="#C8955A" />
+
+    <!-- VCO labels -->
+    <path android:fillColor="#555555"
+        android:pathData="M27,65 L27,64 L33,64 L33,65 L31,65 L31,68 L29,68 L29,65 Z" />
+    <path android:fillColor="#555555"
+        android:pathData="M51,65 L51,64 L57,64 L57,65 L55,65 L55,68 L53,68 L53,65 Z" />
+    <path android:fillColor="#555555"
+        android:pathData="M75,65 L75,64 L81,64 L81,65 L79,65 L79,68 L77,68 L77,65 Z" />
+
+    <!-- Keyboard keys at bottom -->
+    <rect android:x="14" android:y="72" android:width="80" android:height="8"
+        android:fillColor="#F5F5F5" />
+    <rect android:x="20" android:y="72" android:width="2" android:height="5"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="26" android:y="72" android:width="2" android:height="5"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="35" android:y="72" android:width="2" android:height="5"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="41" android:y="72" android:width="2" android:height="5"
+        android:fillColor="#1A1A1A" />
+    <rect android:x="47" android:y="72" android:width="2" android:height="5"
+        android:fillColor="#1A1A1A" />
+</vector>
