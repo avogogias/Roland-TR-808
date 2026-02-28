@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Locate the web-app root (one level above the android/ directory)
+def webRoot = rootProject.projectDir.parentFile
+
+android {
+    namespace 'com.analogsynth.rolandtr808'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.analogsynth.rolandtr808"
+        minSdk 26               // Android 8 — AudioWorklet fully supported in WebView
+        targetSdk 34            // Android 14
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Sign with debug key for sideloading convenience
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+
+    // Bundle the entire web app from the repo root into app assets.
+    // WebViewAssetLoader serves them as:
+    //   https://appassets.androidplatform.net/assets/<path>
+    // That HTTPS origin is required for AudioWorklet and ES modules to work.
+    sourceSets {
+        main {
+            assets.srcDirs = [
+                'src/main/assets',  // any extra local overrides
+                webRoot             // repo root: index.html, plugins/, core/, etc.
+            ]
+        }
+    }
+
+    // Exclude files that must not land in the APK assets bundle
+    androidResources {
+        ignoreAssetsPattern '!.git:!android:!.github:!*.md:!.gitignore:!*.json:!*.sh'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    // Appcompat for AppCompatActivity
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    // WebViewAssetLoader — maps file:// assets to https:// so AudioWorklet works
+    implementation 'androidx.webkit:webkit:1.11.0'
+    // Material components (for themed window)
+    implementation 'com.google.android.material:material:1.12.0'
+}
