@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spectral Vocoder — Phase Vocoder Synthesizer</title>
+  <meta name="theme-color" content="#0d0a14">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vocoder">
+  <link rel="manifest" href="../../manifest.json">
+  <link rel="icon" href="../../icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="Vocoder.css">
   <style>
     body {
@@ -40,6 +47,12 @@
     const app = document.getElementById('app');
     const vocoder = new Vocoder(app);
     vocoder.buildUI();
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../../sw.js', { scope: '../../' })
+        .catch(err => console.warn('SW registration failed:', err));
+    }
   </script>
 </body>
 </html>
