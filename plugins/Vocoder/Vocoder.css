@@ -1,0 +1,428 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Vocoder.css — Spectral Vocoder Synthesizer Module
+   Colour palette: deep space purple with violet accents and green LED meters
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --vc-bg:        #0d0a14;
+  --vc-surface:   #16112a;
+  --vc-surface2:  #1e1738;
+  --vc-border:    #362860;
+  --vc-border2:   #4a3880;
+  --vc-accent:    #8855dd;
+  --vc-accent2:   #aa77ff;
+  --vc-text:      #d8ccff;
+  --vc-muted:     #6655aa;
+  --vc-led-green: #00e050;
+  --vc-led-amber: #e0c000;
+  --vc-led-red:   #e02010;
+}
+
+html, body {
+  min-height: 100vh;
+  background: var(--vc-bg);
+  color: var(--vc-text);
+  font-family: 'Helvetica Neue', Arial, 'Courier New', monospace;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+/* ─── Root container ────────────────────────────────────────────────────── */
+.vocoder {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.vc-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 20px 24px 18px;
+  background: linear-gradient(135deg, #1a1030 0%, #0d0a14 100%);
+  border: 1px solid var(--vc-border2);
+  border-radius: 12px 12px 0 0;
+  margin-bottom: -1px;
+}
+
+.vc-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vc-brand {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+}
+
+.vc-model {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--vc-accent2);
+  text-shadow: 0 0 24px rgba(170, 119, 255, 0.4);
+}
+
+.vc-subtitle {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+}
+
+.vc-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.vc-note-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.vc-note-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--vc-muted);
+  text-transform: uppercase;
+}
+
+.vc-note-display {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--vc-accent2);
+  letter-spacing: 2px;
+  min-width: 42px;
+  text-align: right;
+  text-shadow: 0 0 12px rgba(170, 119, 255, 0.5);
+}
+
+/* ─── Main panel ─────────────────────────────────────────────────────────── */
+.vc-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  background: var(--vc-surface);
+  border: 1px solid var(--vc-border);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+/* ─── Sections ───────────────────────────────────────────────────────────── */
+.vc-section {
+  flex: 1 1 140px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--vc-border);
+  min-width: 120px;
+}
+
+.vc-section:last-child {
+  border-right: none;
+}
+
+.vc-section-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+  padding: 10px 14px 8px;
+  border-bottom: 1px solid var(--vc-border);
+  background: rgba(136, 85, 221, 0.06);
+}
+
+.vc-section-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 10px;
+}
+
+/* ─── VU meter ───────────────────────────────────────────────────────────── */
+.vc-vu-wrap {
+  width: 100%;
+  padding: 2px 0;
+}
+
+.vc-vu-canvas {
+  display: block;
+  width: 100%;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid #1a1030;
+}
+
+/* ─── Mic row ────────────────────────────────────────────────────────────── */
+.vc-mic-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.vc-mic-status {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vc-mic-btn {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--vc-text);
+  background: var(--vc-surface2);
+  border: 1px solid var(--vc-border2);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  width: 100%;
+}
+
+.vc-mic-btn:hover {
+  background: rgba(136, 85, 221, 0.2);
+  border-color: var(--vc-accent);
+}
+
+.vc-mic-btn.active {
+  background: rgba(136, 85, 221, 0.25);
+  border-color: var(--vc-accent2);
+  color: var(--vc-accent2);
+}
+
+/* ─── Knobs ──────────────────────────────────────────────────────────────── */
+.vc-knob-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Select controls ────────────────────────────────────────────────────── */
+.vc-select-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.vc-ctrl-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+}
+
+.vc-select {
+  background: var(--vc-surface2);
+  color: var(--vc-text);
+  border: 1px solid var(--vc-border2);
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 11px;
+  font-family: inherit;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+}
+
+.vc-select:hover,
+.vc-select:focus {
+  border-color: var(--vc-accent);
+  background: rgba(136, 85, 221, 0.1);
+}
+
+/* ─── Hold button ────────────────────────────────────────────────────────── */
+.vc-hold-row {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.vc-hold-btn {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+  background: var(--vc-surface2);
+  border: 1px solid var(--vc-border);
+  border-radius: 4px;
+  padding: 5px 0;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.15s;
+}
+
+.vc-hold-btn:hover {
+  border-color: var(--vc-accent);
+  color: var(--vc-text);
+}
+
+.vc-hold-btn.active {
+  background: rgba(136, 85, 221, 0.3);
+  border-color: var(--vc-accent2);
+  color: var(--vc-accent2);
+  box-shadow: 0 0 8px rgba(136, 85, 221, 0.4);
+}
+
+/* ─── Preset buttons ─────────────────────────────────────────────────────── */
+.vc-preset-btn {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+  background: var(--vc-surface2);
+  border: 1px solid var(--vc-border);
+  border-radius: 4px;
+  padding: 7px 0;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.15s;
+}
+
+.vc-preset-btn:hover {
+  background: rgba(136, 85, 221, 0.15);
+  border-color: var(--vc-accent);
+  color: var(--vc-text);
+}
+
+.vc-preset-btn.active {
+  background: rgba(136, 85, 221, 0.3);
+  border-color: var(--vc-accent2);
+  color: var(--vc-accent2);
+  box-shadow: inset 0 0 10px rgba(136, 85, 221, 0.2);
+}
+
+/* ─── Keyboard ───────────────────────────────────────────────────────────── */
+.vc-keyboard {
+  background: var(--vc-surface);
+  border: 1px solid var(--vc-border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 16px 20px 24px;
+  margin-top: -1px;
+}
+
+.vc-kb-hint {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vc-muted);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.vc-keys {
+  position: relative;
+  display: flex;
+  height: 100px;
+  align-items: flex-end;
+  gap: 2px;
+  justify-content: center;
+}
+
+/* White keys */
+.vc-key--white {
+  position: relative;
+  width: 40px;
+  height: 100px;
+  background: linear-gradient(180deg, #f0ecff 0%, #e0d8f8 100%);
+  border: 1px solid #7755cc;
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+  transition: background 0.05s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.vc-key--white:hover {
+  background: linear-gradient(180deg, #e8e0ff 0%, #ccc0f8 100%);
+}
+
+.vc-key--white.pressed {
+  background: linear-gradient(180deg, #cc99ff 0%, #9955ee 100%);
+  border-color: var(--vc-accent2);
+  box-shadow: inset 0 -3px 8px rgba(136, 85, 221, 0.4);
+}
+
+/* Black keys — positioned absolutely over white keys */
+.vc-key--black {
+  position: relative;
+  width: 26px;
+  height: 62px;
+  background: linear-gradient(180deg, #2a2040 0%, #0d0a14 100%);
+  border: 1px solid #5533aa;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  margin: 0 -14px;
+  z-index: 2;
+  transition: background 0.05s;
+  user-select: none;
+  -webkit-user-select: none;
+  align-self: flex-start;
+}
+
+.vc-key--black:hover {
+  background: linear-gradient(180deg, #3a2d60 0%, #1a1030 100%);
+}
+
+.vc-key--black.pressed {
+  background: linear-gradient(180deg, #7744cc 0%, #4422aa 100%);
+  border-color: var(--vc-accent2);
+  box-shadow: inset 0 -2px 6px rgba(170, 119, 255, 0.4);
+}
+
+.vc-key-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--vc-muted);
+  pointer-events: none;
+}
+
+.vc-key--white.pressed .vc-key-label {
+  color: #fff;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .vc-panel {
+    flex-direction: column;
+  }
+  .vc-section {
+    border-right: none;
+    border-bottom: 1px solid var(--vc-border);
+    flex: none;
+  }
+  .vc-section:last-child {
+    border-bottom: none;
+  }
+  .vc-key--white { width: 30px; }
+  .vc-key--black { width: 20px; margin: 0 -11px; }
+}

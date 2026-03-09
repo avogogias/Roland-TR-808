@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spectral Vocoder — Phase Vocoder Synthesizer</title>
+  <link rel="stylesheet" href="Vocoder.css">
+  <style>
+    body {
+      background: #0d0a14;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 48px 16px 48px;
+      position: relative;
+    }
+    #app {
+      width: 100%;
+      max-width: 1100px;
+    }
+    .back-link {
+      position: fixed;
+      top: 14px;
+      left: 18px;
+      color: #6655aa;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-family: 'Helvetica Neue', Arial, monospace;
+    }
+    .back-link:hover { color: #aa88ff; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../index.html">← BACK</a>
+  <div id="app"></div>
+  <script type="module">
+    import Vocoder from './Vocoder.js';
+    const app = document.getElementById('app');
+    const vocoder = new Vocoder(app);
+    vocoder.buildUI();
+  </script>
+</body>
+</html>
