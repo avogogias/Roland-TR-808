@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analogue Synthesizer Simulations</title>
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Synth Lab">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -169,9 +177,44 @@
       </div>
     </a>
 
+    <!-- Spectral Vocoder -->
+    <a class="synth-card" data-synth="Vocoder" href="plugins/Vocoder/Vocoder.html">
+      <div class="synth-card-header">
+        <div>
+          <span class="synth-card-brand">Spectral</span>
+          <span class="synth-card-model">VOCODER</span>
+        </div>
+      </div>
+      <div class="synth-card-body">
+        <div class="synth-card-name">Phase Vocoder Synthesizer Module</div>
+        <p class="synth-card-desc">
+          Classic vocoder effect with up to 32 logarithmically-spaced bands,
+          separate attack/release envelope followers, formant shift, sibilance
+          enhancement, and five carrier waveforms including the signature buzz.
+          Designed for live performance.
+        </p>
+        <div class="synth-card-tags">
+          <span class="synth-tag">8/16/32 Bands</span>
+          <span class="synth-tag">Formant Shift</span>
+          <span class="synth-tag">Live Mic Input</span>
+          <span class="synth-tag">MIDI + QWERTY</span>
+        </div>
+        <span class="synth-card-open">Open →</span>
+      </div>
+    </a>
+
   </div><!-- .synth-grid -->
 
 </main>
 
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .catch(err => console.warn('SW registration failed:', err));
+    });
+  }
+</script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+{
+  "name": "Analogue Synthesizer Simulations",
+  "short_name": "Synth Lab",
+  "description": "Six classic analogue synthesizers — DSP-accurate, browser-based, no samples. Includes the Spectral Vocoder phase-vocoder module.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "en",
+  "categories": ["music", "entertainment"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Spectral Vocoder",
+      "short_name": "Vocoder",
+      "description": "Open the phase-vocoder synthesizer",
+      "url": "./plugins/Vocoder/Vocoder.html",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Roland TR-808",
+      "short_name": "TR-808",
+      "description": "Open the TR-808 drum machine",
+      "url": "./plugins/TR808/TR808.html",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Moog Minimoog",
+      "short_name": "Minimoog",
+      "description": "Open the Minimoog Model D",
+      "url": "./plugins/Minimoog/Minimoog.html",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+    }
+  ]
+}
