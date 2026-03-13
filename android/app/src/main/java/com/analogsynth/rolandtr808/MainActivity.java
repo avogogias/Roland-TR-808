@@ -29,7 +29,7 @@ import androidx.webkit.WebViewAssetLoader;
  * (https:// or localhost). Serving from file:// would silently block worklet
  * loading, breaking all audio synthesis.
  *
- * All six instruments (TR-808, TR-909, Minimoog, Juno-106, MS-20, MS-10)
+ * All seven instruments (TR-808, TR-909, Minimoog, Juno-106, MS-20, MS-10, Fender Rhodes)
  * are bundled inside the APK via the Gradle sourceSets.assets configuration
  * in app/build.gradle — no internet access is required at runtime.
  */
