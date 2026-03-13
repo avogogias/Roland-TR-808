@@ -1,0 +1,222 @@
+/**
+ * FenderRhodes.css — Fender Rhodes Mark I Stage 73 electric piano simulation.
+ *
+ * Colour palette inspired by the real hardware:
+ *   - Body:      dark walnut charcoal  (#1c1a14)
+ *   - Trim:      warm amber / gold     (#c87a28 / #e8a030)
+ *   - Cheeks:    simulated wood grain  (linear-gradient warm browns)
+ *   - Keys:      cream ivory whites    (#f5f0e8)
+ *               near-black ebony blacks (#0d0a05)
+ */
+
+/* ── Root panel ─────────────────────────────────────────────────────────── */
+
+.fender-rhodes {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(170deg, #1c1a14 0%, #14120c 100%);
+  color: #e0d0b0;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  user-select: none;
+}
+
+/* ── Header / Nameboard ─────────────────────────────────────────────────── */
+
+.fr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px 8px;
+  background: linear-gradient(180deg, #0e0c08 0%, #1c1a12 100%);
+  border-bottom: 2px solid #5a4520;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Simulated wood-grain trim strips */
+.fr-header::before,
+.fr-header::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    #5a3a18 0px, #6b4820 3px,
+    #4a2e10 3px, #5a3a18 6px
+  );
+  border: 1px solid #3a2408;
+}
+.fr-header::before { left: 0; }
+.fr-header::after  { right: 0; }
+
+.fr-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 0 24px;
+}
+
+.fr-brand {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #c8a060;
+  text-transform: uppercase;
+}
+
+.fr-model {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #e8a030;
+  text-shadow: 0 0 18px rgba(232,160,48,0.35), 0 1px 2px #000;
+  font-style: italic;
+}
+
+.fr-subtitle {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #886040;
+  text-transform: uppercase;
+}
+
+/* ── Control panel ──────────────────────────────────────────────────────── */
+
+.fr-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0 20px;
+  background: #181410;
+  border-bottom: 2px solid #3a2a10;
+  align-items: stretch;
+}
+
+/* ── Section ────────────────────────────────────────────────────────────── */
+
+.fr-section {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #3a2a10;
+  padding: 10px 16px 12px;
+}
+.fr-section:last-child { border-right: none; }
+
+.fr-section-title {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #886040;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #3a2a10;
+  padding-bottom: 5px;
+}
+
+.fr-section-body {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex: 1;
+}
+
+/* ── Knob wrapper ───────────────────────────────────────────────────────── */
+
+.fr-knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Keyboard ───────────────────────────────────────────────────────────── */
+
+.fr-keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 24px 18px;
+  background: linear-gradient(180deg, #181410 0%, #100e08 100%);
+  border-top: 2px solid #3a2a10;
+  gap: 8px;
+}
+
+/* Fallboard (lid) strip above keys */
+.fr-keyboard::before {
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: 1780px;
+  height: 8px;
+  background: linear-gradient(180deg, #5a3a18 0%, #3a2208 100%);
+  border-radius: 2px 2px 0 0;
+  border: 1px solid #7a5030;
+}
+
+.fr-kb-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.fr-kb-inner {
+  position: relative;
+  display: flex;
+  height: 120px;
+}
+
+/* White keys */
+.fr-key-white {
+  position: relative;
+  width: 28px;
+  height: 110px;
+  background: linear-gradient(180deg, #f5f0e8 0%, #ffffff 60%, #ece8de 100%);
+  border: 1px solid #b8a880;
+  border-top: 2px solid #c8b890;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 60ms;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.fr-key-white:active,
+.fr-key-white.active {
+  background: linear-gradient(180deg, #e8d8a8 0%, #f5e8c0 60%, #e0d090 100%);
+  border-color: #a89060;
+}
+
+/* Black keys — absolutely positioned by JS */
+.fr-key-black {
+  position: absolute;
+  width: 18px;
+  height: 68px;
+  background: linear-gradient(180deg, #2a2010 0%, #0d0a05 40%, #1a1408 100%);
+  border: 1px solid #5a4520;
+  border-bottom: 3px solid #3a2a10;
+  border-radius: 0 0 3px 3px;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 2;
+  transition: background 60ms;
+  top: 0;
+}
+
+.fr-key-black:active,
+.fr-key-black.active {
+  background: linear-gradient(180deg, #c87a28 0%, #8a5018 40%, #6a3a10 100%);
+  border-color: #e8a030;
+}
+
+/* ── MIDI status strip ──────────────────────────────────────────────────── */
+
+.fr-midi-status {
+  font-size: 9px;
+  color: #604030;
+  letter-spacing: 0.12em;
+  text-align: center;
+}

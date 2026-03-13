@@ -122,6 +122,10 @@ button { font-family: inherit; cursor: pointer; }
 .synth-card[data-synth="MS10"] .synth-card-header { background: linear-gradient(135deg, #0d0d00, #141400); }
 .synth-card[data-synth="MS10"]:hover { border-color: #dddd00; box-shadow: 0 12px 32px rgba(170,170,0,0.2); }
 
+.synth-card[data-synth="FenderRhodes"] { border-color: #c87a28; }
+.synth-card[data-synth="FenderRhodes"] .synth-card-header { background: linear-gradient(135deg, #1a1208, #2a2010); }
+.synth-card[data-synth="FenderRhodes"]:hover { border-color: #e8a030; box-shadow: 0 12px 32px rgba(200,122,40,0.2); }
+
 .synth-card-brand {
   font-size: 9px;
   letter-spacing: 4px;
@@ -143,7 +147,8 @@ button { font-family: inherit; cursor: pointer; }
 .synth-card[data-synth="Minimoog"] .synth-card-model { color: #ff8833; font-style: italic; }
 .synth-card[data-synth="Juno106"] .synth-card-model { color: #4488ff; }
 .synth-card[data-synth="MS20"]    .synth-card-model { color: #cccc00; }
-.synth-card[data-synth="MS10"]    .synth-card-model { color: #aaaa00; }
+.synth-card[data-synth="MS10"]         .synth-card-model { color: #aaaa00; }
+.synth-card[data-synth="FenderRhodes"] .synth-card-model { color: #e8a030; font-style: italic; }
 
 .synth-card-body {
   padding: 16px;

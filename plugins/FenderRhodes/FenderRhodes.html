@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fender Rhodes Stage 73</title>
+  <link rel="stylesheet" href="FenderRhodes.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0e0c08;
+      display: flex; justify-content: center; align-items: flex-start;
+      min-height: 100vh; padding: 32px 16px; position: relative;
+    }
+    .back-link { position: fixed; top: 12px; left: 16px; color: #886040;
+      text-decoration: none; font-size: 12px; }
+    .back-link:hover { color: #e8a030; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../index.html">← BACK</a>
+  <div id="app" style="position:relative;"></div>
+  <script type="module">
+    import FenderRhodes from './FenderRhodes.js';
+    const app = document.getElementById('app');
+    const piano = new FenderRhodes(app);
+    piano.buildUI();
+  </script>
+</body>
+</html>

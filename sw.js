@@ -12,7 +12,7 @@
  *   The old cache is deleted on the next SW activation.
  */
 
-const CACHE_VERSION = 'synth-lab-v1';
+const CACHE_VERSION = 'synth-lab-v2';
 
 /** Every static file the app needs to run fully offline. */
 const PRECACHE_ASSETS = [
@@ -89,6 +89,11 @@ const PRECACHE_ASSETS = [
   './plugins/MS10/MS10.html',
   './plugins/MS10/MS10.js',
   './plugins/MS10/MS10.css',
+
+  // ── Fender Rhodes Stage 73 ────────────────────────────────────────
+  './plugins/FenderRhodes/FenderRhodes.html',
+  './plugins/FenderRhodes/FenderRhodes.js',
+  './plugins/FenderRhodes/FenderRhodes.css',
 ];
 
 // ─── Install: pre-cache all assets ────────────────────────────────────────────
