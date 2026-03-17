@@ -45,7 +45,7 @@ android {
 
     // Exclude files that must not land in the APK assets bundle
     androidResources {
-        ignoreAssetsPattern '!.git:!android:!.github:!*.md:!.gitignore:!*.json:!*.sh'
+        ignoreAssetsPattern '!.git:!android:!.github:!*.md:!.gitignore:!tests:!*.sh'
     }
 
     compileOptions {
